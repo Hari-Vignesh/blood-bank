@@ -1,0 +1,22 @@
+{% extends 'relations/_base.html' %}
+
+{% block common %}
+<div>
+    <div>
+        <a href=" {% url 'relations:add_person' %} ">Add New Person</a>
+    </div>
+</div>
+{% endblock common %}
+
+{% block content %}
+{% for person in people %}
+    <div>
+    <p>{{person.name}} ({{person.blood_type}})</p>
+    <p><a href="{% url 'relations:detail' pk=person.id %}">Show More Info</a></p>
+    <p><a href="{% url 'relations:receives' pk=person.id %}">Receives Blood from</a></p>
+    <p><a href="{% url 'relations:gives' pk=person.id %}">Donates Blood to</a></p>
+    </div>
+    <hr>
+{% endfor %}
+{% include "relations/_paginator.html" with model_object=people %}
+{% endblock content %}

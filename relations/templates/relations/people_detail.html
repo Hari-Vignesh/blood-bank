@@ -1,0 +1,13 @@
+{% extends 'relations/_base.html' %}
+
+{% block content %}
+<div>
+    <p><strong>Name:</strong> {{person.name}}</p>
+    <p><strong>Gender:</strong> {% if person.gender == "M" %}Male{% else %}Female{% endif %}</p>
+    <p><strong>Age:</strong> {{age}}</p>
+    <p><strong>Blood Group:</strong> {{person.blood_type}}</p>
+    <p><strong>Height:</strong> {{person.height}}</p>
+    <p><strong>Weight:</strong> {{person.weight}}</p>
+    <p><strong>BMI:</strong> {{bmi}}</p>
+</div>
+{% endblock content %}

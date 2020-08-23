@@ -1,0 +1,5 @@
+<div>
+    <p>Name: <a href=" {% url 'relations:detail' person.pk %} ">{{person.name}}</a></p>
+    <p>Gender: {% if person.gender == "M" %}Male{% else %}Female{% endif %}</p>
+    <p>Blood Group: {{person.blood_type}}</p>
+</div>

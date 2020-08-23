@@ -1,0 +1,21 @@
+{% if model_object.has_other_pages %}
+<ul class="pagination">
+    {% if model_object.has_previous %}
+    <a href="?page={{ model_object.previous_page_number }}">&laquo;</a>
+    {% else %}
+    <a class="disabled">&laquo;</a>
+    {% endif %}
+    {% for i in model_object.paginator.page_range %}
+    {% if model_object.number == i %}
+    <a href="#" class="active">{{i}}</a>
+    {% else %}
+        <a href="?page={{ i }}">{{ i }}</a>
+    {% endif %}
+    {% endfor %}
+    {% if model_object.has_next %}
+    <a href="?page={{ model_object.next_page_number }}">&raquo;</a>
+    {% else %}
+    <a class="disabled">&raquo;</a>
+    {% endif %}
+</ul>
+{% endif %}

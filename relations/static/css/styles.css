@@ -1,0 +1,72 @@
+nav {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    background-color: cadetblue;
+    position: fixed;
+    top: 0;
+    overflow: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.nav-left ul li{
+    float: left;
+    padding: 1.5em;
+}
+
+.nav-right ul li {
+    float: right;
+    padding: 1.5em;
+}
+
+a {
+    color: blue;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+main {
+    clear: both;
+    padding: 1.5em;
+}
+
+#brand-name {
+    font-size: 1.5em;
+}
+
+.pagination {
+    display: inline-block;
+  }
+
+.pagination li{
+    list-style-type: none;
+}
+
+.pagination a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid cadetblue;
+}
+
+.active {
+    background-color: cadetblue;
+}
+
+.disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}

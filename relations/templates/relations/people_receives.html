@@ -1,0 +1,13 @@
+{% extends 'relations/_base.html' %}
+{% load extras %}
+
+{% block content %}
+    <div>
+        <h2>{{person.name|capitalize}} with {{person.blood_type}} can receive from</h2>
+    </div>
+    <hr>
+    {% for each in people%}
+    {% include "relations/_person.html" with person=each %}
+    <hr>
+    {% endfor %}
+{% endblock content %}

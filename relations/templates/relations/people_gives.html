@@ -1,0 +1,17 @@
+{% extends 'relations/_base.html' %}
+{% load extras %}
+
+{% block content %}
+    <div>
+        <h2>{{person.name|capitalize}} with {{person.blood_type}} can donate to</h2>
+    </div>
+    <hr>
+    {% for each in people%}
+        <div>
+            <p>Name: <a href=" {% url 'relations:detail' each.pk %} ">{{each.name}}</a></p>
+            <p>Gender: {% if each.gender == "M" %}Male{% else %}Female{% endif %}</p>
+            <p>Blood Group: {{each.blood_type}}</p>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock content %}
